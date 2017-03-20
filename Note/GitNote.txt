@@ -1,0 +1,10 @@
+git init 初始化
+git status  查看状态
+git diff 比较
+git add  新增
+git commit -m "xxx"  提交
+git log  查看日志
+git reset --hard HEAD^  恢复上一个版本  HEAD^^ 上上个版本  HEAD~100前100个版本
+git reset --hard 版本号
+git reflog  查看历史日志
+git checkout -- readme.txt  丢弃修改
