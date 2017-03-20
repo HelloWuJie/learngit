@@ -7,4 +7,17 @@ git log  查看日志
 git reset --hard HEAD^  恢复上一个版本  HEAD^^ 上上个版本  HEAD~100前100个版本
 git reset --hard 版本号
 git reflog  查看历史日志
-git checkout -- readme.txt  丢弃修改
+git checkout -- readme.txt  丢弃修改,会到上次最新修改状态
+git rm test.txt  删除文件，需commit
+
+
+git remote add origin https://github.com/HelloWuJie/learngit.git   远程创建仓库
+git push -u origin master  
+
+
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
