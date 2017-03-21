@@ -11,6 +11,7 @@ git checkout -- readme.txt  丢弃修改,会到上次最新修改状态
 git rm test.txt  删除文件，需commit
 
 
+
 本地远程仓库上传到GitHUB
 git remote add origin https://github.com/HelloWuJie/learngit.git   远程创建仓库
 git push -u origin master  
@@ -36,4 +37,4 @@ git branch -d temp
 合并某分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
 
-
+git log --graph --pretty=oneline --abbrev-commit 查看分支合并情况
