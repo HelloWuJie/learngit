@@ -6,12 +6,14 @@ Created on Wed Mar 22 10:58:01 2017
 """
 import math
 
+'''
 def func1(x):  
     sum = 0 
     for i in range(x+1):
         sum += i
     return(sum)
 
+#检查参数类型
 def my_abs(x):
     if(not isinstance(x,(int,float))):    #检查参数类型
         raise TypeError('bad operand type')
@@ -19,13 +21,16 @@ def my_abs(x):
         return x
     else:
         return -x
-        
+
+#坐标移动        
 def move(x,y,step,angle=0):
     nx = x + step * math.cos(angle)
     ny = y + step * math.sin(angle)
     return nx,ny
 
-def quadratic(a,b,c):
+#ax^2+bx+c=0 求解
+def quadratic(*args):
+    a,b,c = args
     if not isinstance(a,(int,float)):
         raise TypeError('bad operand type')
     if not isinstance(b,(int,float)):
@@ -58,5 +63,79 @@ def quadratic(a,b,c):
 def power(x,n=2):
     y = x**n
     return y
-    
-print(power(5))
+
+def f1(*args):
+    print ('args = ',args)
+
+
+#N的阶乘计算
+def fact(n):
+    if n == 1:
+        return 1
+    return n*fact(n-1)
+
+#N的阶乘计算，方法二
+def fact_iter(num, res=1):
+    if num == 1:
+        return res
+    a = num-1
+    b = num*res
+    return fact_iter(a,b)
+
+#汉诺塔
+def move(n, a, b, c):
+    if n == 1:
+        print('%s --> %s'%(a,c))
+    else:
+        move(n-1,a,c,b)
+        move(1,a,b,c)
+        move(n-1,b,a,c)
+
+
+L = ['a','b','c','d']
+r = []
+n = 3
+for i in range(3):
+    r.append(L[i])
+print(r)
+
+
+L = ['Hello', 'World', 18, 'Apple', None]
+print([s.lower() for s in L if isinstance(s,str)])
+
+def fib(max):
+    n, a, b  = 0, 0 ,1
+    while n < max:
+        yield b
+        a, b = b, a + b
+        n += 1
+    return
+
+f = fib(6)
+[print(i) for i in f]
+
+
+def triangles():
+    L = [1]
+    while True:
+        yield L
+        L.append(0)
+        L = [L[i - 1] + L[i] for i in range(len(L))]
+
+'''
+def triangles():
+    L = [1]
+    while 1:
+        yield L
+        T = []
+        L.append(0)
+        for i in range(len(L)):
+            T.append(L[i-1] + L[i])
+        L = T
+
+n = 0
+for t in triangles():
+    print(t)
+    n = n + 1
+    if n == 10:
+        break
