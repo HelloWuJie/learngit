@@ -1,3 +1,6 @@
+﻿账号： HelloWuJie/3080200jie_
+
+
 git init 初始化
 git status  查看状态
 git diff 比较
