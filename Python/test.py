@@ -122,7 +122,7 @@ def triangles():
         L.append(0)
         L = [L[i - 1] + L[i] for i in range(len(L))]
 
-'''
+
 def triangles():
     L = [1]
     while 1:
@@ -139,3 +139,21 @@ for t in triangles():
     n = n + 1
     if n == 10:
         break
+
+'''
+
+'''
+def findMinAndMax(L):
+    if len(L) == 0:
+        return ('None','None')
+    min  = max = L[0]
+    
+    for x in L:
+        if x < min: min = x
+        if x >max: max = x
+    return(min,max)
+
+L  = [1,2,3,4,5]
+M = findMinAndMax(L)
+print(M)
+'''
