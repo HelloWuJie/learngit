@@ -5,6 +5,7 @@ Created on Wed Mar 22 10:58:01 2017
 @author: WJ
 """
 import math
+from functools import reduce
 
 '''
 def func1(x):  
@@ -165,7 +166,6 @@ def line_conf(a,b):
 
 line_A = line_conf(2,1)
 print(line_A(1))
-'''
 
 def who(name):
     def do(what):
@@ -177,3 +177,93 @@ Lily = who('Lily')
 
 Jack('i want to fuck you!')
 Lily('oh yeah~') 
+
+
+#利用map()函数，把用户输入的不规范的英文名字，变为首字母大写，
+# 其他小写的规范名字。输入：['adam', 'LISA', 'barT']，
+# 输出：['Adam', 'Lisa', 'Bart']：
+
+
+def fn(str):
+    T = ''
+    for x in range(len(str)):
+        if x == 0:
+            T = str[0].upper()
+        else:
+            T = T + str[x].lower()
+    return T
+
+def fn(str):
+    T = ''
+    for k,v in enumerate(str):
+        if k == 0:
+            T = T + v.upper()
+        else:
+            T = T + v.lower()
+    return T
+
+def normalize(name):
+    return map(fn, name)
+
+L = ['adam','LISA','barT']
+print(list(normalize(L)))
+
+#请编写一个prod()函数，可以接受一个list并利用reduce()求积：
+def prod(L):
+    def fn(x,y):
+        return x*y
+    return reduce(fn,L)
+
+L = [1,2,3,4]
+print(prod(L))
+
+
+
+
+#利用map和reduce编写一个str2float函数，把字符串'123.456'转换成浮点数123.456：
+   
+def str2float(s):
+    def fn1 (x,y):
+        return (x*10+y)
+    def fn2 (x,y):
+        return (x/10+y)
+    def char2num(str):
+        digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+        return digits[str]
+    if '.' in s:
+        pos = s.index('.')
+        first = float(reduce(fn1,map(char2num,s[0:pos])))
+        second = float(reduce(fn2,map(char2num,s[len(s):pos:-1])))
+        return first + second/10
+    else:
+        return float(reduce(fn1,map(char2num,s)))
+
+
+print(str2float('1234.56'))
+
+
+
+
+def is_palindrome(n):
+    T = str(n)
+    for i in range(len(T)):
+        if T[i] != T[len(T)-i-1]:
+            return False
+    return T
+
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+output = filter(is_palindrome, range(1, 1000))
+print('1~1000:', list(output))
+'''
+
+L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
+def by_name(t):
+    return t[0]
+def by_age(t):
+    return t[1]
+L2 = sorted(L, key=by_name)
+L3 = sorted(L, key=by_age)
+print(L2)
+print(L3)
