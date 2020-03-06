@@ -156,4 +156,24 @@ def findMinAndMax(L):
 L  = [1,2,3,4,5]
 M = findMinAndMax(L)
 print(M)
+
+
+def line_conf(a,b):
+    def line(x):
+        return (a*x + b)
+    return line
+
+line_A = line_conf(2,1)
+print(line_A(1))
 '''
+
+def who(name):
+    def do(what):
+        print(name,"say",what)
+    return do
+
+Jack = who('Jack')
+Lily = who('Lily')
+
+Jack('i want to fuck you!')
+Lily('oh yeah~') 
