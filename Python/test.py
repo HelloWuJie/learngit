@@ -6,7 +6,6 @@ Created on Wed Mar 22 10:58:01 2017
 """
 import math
 from functools import reduce
-
 '''
 def func1(x):  
     sum = 0 
@@ -142,7 +141,6 @@ for t in triangles():
         break
 
 '''
-
 '''
 def findMinAndMax(L):
     if len(L) == 0:
@@ -341,5 +339,3 @@ def fast(x, y):
 f = fast(11, 22)
 print(f)
 '''
-
-
