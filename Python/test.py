@@ -241,9 +241,6 @@ def str2float(s):
 
 print(str2float('1234.56'))
 
-
-
-
 def is_palindrome(n):
     T = str(n)
     for i in range(len(T)):
@@ -256,7 +253,7 @@ def is_palindrome(n):
 
 output = filter(is_palindrome, range(1, 1000))
 print('1~1000:', list(output))
-'''
+
 
 L = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
 def by_name(t):
@@ -267,3 +264,82 @@ L2 = sorted(L, key=by_name)
 L3 = sorted(L, key=by_age)
 print(L2)
 print(L3)
+
+def createCounter():
+    x = 0
+    def counter():
+        nonlocal x
+        x =  x + 1
+        return x
+    return counter
+
+
+
+def createCounter():
+    def numgenerator():
+        num = 0
+        while True:
+            num += 1
+            yield num
+    myint = numgenerator()
+    def counter():
+        return (next(myint))
+    
+    return counter
+counterA = createCounter()
+print(counterA(), counterA(), counterA(), counterA(), counterA())
+
+
+L = list(filter(lambda n: n % 2 == 1, range(1, 20)))
+
+#装饰器decorator
+
+def log(func):
+    @functools.wraps(func)
+    def wrapper(*args,**kw):
+        print('call %s():' % func.__name__)
+        return func(*args,**kw)
+    return wrapper
+
+#或者针对带参数的decorator：
+import functools
+def log(text):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+
+@log
+def now():
+    print("2015-3-25")
+
+now()
+
+
+#请设计一个decorator，它可作用于任何函数上，并打印该函数的执行时间
+import time, functools
+
+def metric(fn):
+    @functools.wraps(fn)
+    def wrapper(*args,**kw):
+        begin = time.time()
+        print('%s executed start: %s ' % (fn.__name__, begin))
+        result = fn(*args,**kw)
+        end = time.time()
+        print('%s executed end: %s ' % (fn.__name__, end))
+        print('%s executed in : %.2f ms' % (fn.__name__, (end - begin)*1000 ))
+        return result
+    return wrapper
+
+@metric
+def fast(x, y):
+    time.sleep(0.0012)
+    return x + y
+f = fast(11, 22)
+print(f)
+'''
+
+
