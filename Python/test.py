@@ -389,4 +389,57 @@ print(bart.name,bart.get_gender())
 bart.set_gender('female')
 print(bart.name,bart.get_gender())
 
+
+class Student(object):
+    count = 0
+
+    def __init__(self, name):
+        self.name = name
+        Student.count = Student.count + 1   #区分类属性和对象属性，如果self.count ，每个实例count = 0+1
+
+s1 = Student('wujie')
+print(s1.count)
+s2 = Student('jiewu')
+print(s2.count)
+
+
 '''
+
+class Screen(object):
+
+    @property
+    def width(self):
+        return self._width
+    
+    @width.setter
+    def width(self,value):
+        if not isinstance(value, int):
+            raise ValueError('width must be int!')
+        else:
+            self._width = value 
+        
+    @property
+    def height(self):
+        return self._height
+    
+    @height.setter
+    def height(self,value):
+        if not isinstance(value, int):
+            raise ValueError('height must be int!')
+        else:
+            self._height = value
+    
+    @property
+    def resolution(self):
+        self._resolution = self._width * self._height
+        return self._resolution
+
+
+s = Screen()
+s.width = 1024
+s.height = 768
+print('resolution =', s.resolution)
+if s.resolution == 786432:
+    print('测试通过!')
+else:
+    print('测试失败!')
