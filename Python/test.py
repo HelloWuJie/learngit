@@ -403,7 +403,7 @@ s2 = Student('jiewu')
 print(s2.count)
 
 
-'''
+
 
 class Screen(object):
 
@@ -443,3 +443,71 @@ if s.resolution == 786432:
     print('测试通过!')
 else:
     print('测试失败!')
+
+
+class Fib(object):
+    def __init__(self):
+        self.a, self.b = 0, 1
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        self.a, self.b = self.b, self.a + self.b
+        if self.a > 100:
+            raise StopIteration()
+        return self.a
+    
+
+for i in Fib():
+    print(i)
+
+
+
+from functools import reduce
+
+def str2num(s):
+    try:
+        return int(s)
+    except:
+        return float(s)
+
+def calc(exp):
+    ss = exp.split('+')
+    ns = map(str2num, ss)
+    return reduce(lambda acc, x: acc + x, ns)
+
+def main():
+    r = calc('100 + 200 + 345')
+    print('100 + 200 + 345 =', r)
+    r = calc('99 + 88 + 7.6')
+    print('99 + 88 + 7.6 =', r)
+
+main()
+
+
+
+import logging
+logging.basicConfig(level=logging.INFO)
+
+s = '0'
+n = int(s)
+logging.info('n = %d' % n)
+print(10/n)
+
+
+with open('D:\MyGit\learngit\Python\hello.py','r',encoding = 'utf-8') as f:
+    for line in f.readlines():
+        print(line.strip())
+
+import os
+s = os.path.abspath('.')
+name = 'test.txt'
+file_name = os.path.join(s,'test.txt')
+with open(file_name,'a') as f:
+    f.write('%s\n' % s)
+os.rename(file_name,'test_test.txt')
+#n = os.path.join(s,'testdir')
+#os.mkdir(n)
+os.rmdir(file_name)
+'''
