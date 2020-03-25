@@ -195,7 +195,7 @@ def fn(str):
     T = ''
     for k,v in enumerate(str):
         if k == 0:
-            T = T + v.upper()
+            T =T + v.upper()
         else:
             T = T + v.lower()
     return T
@@ -511,3 +511,8 @@ os.rename(file_name,'test_test.txt')
 #os.mkdir(n)
 os.rmdir(file_name)
 '''
+
+import json
+obj = dict(name='小明', age=20)
+s = json.dumps(obj, ensure_ascii=False)
+print(s)
