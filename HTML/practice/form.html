@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+</head>
+<body>
+    <form action="demo.php" method="get" name="name1">
+        <label for="text">姓名：</label>
+        <input type="text" name="user_name" id="text" value="请输入用户名" maxlength="6"> <br>
+        <label for="pwd">密码：</label>
+        <input type="password" name="passwd" id="pwd"><br>
+        性别：
+        <input type="radio" name="sex" value="男" id="nan" checked><label for="nan">男</label>
+        <input type="radio" name="sex" value="女" id="nv"><label for="nv">女</label> <br>
+        生日：
+        <input type="date" name="date"><br>
+        籍贯：
+        <select name="location">
+            <option>浙江</option>
+            <option>安徽</option>
+            <option>上海</option>
+            <option selected>北京</option>
+            <option>广东</option>
+        </select><br>
+        爱好: 
+        <input type="checkbox" name="hobby" value="吃饭" id="eat" ><label for="eat">吃饭</label>
+        <input type="checkbox" name="hobby" value="睡觉" id="sleep" checked><label for="sleep">睡觉</label><br>
+        <label for="email">邮箱：</label>
+        <input type="email" name="email" id="email"><br>
+        <label for="sign">个性签名：</label><br>
+        <textarea name="sign" id="sign" cols="30" rows="10">你此刻的心情...</textarea><br>
+        上传头像：
+        <input type="file" name="input_file"><br>
+        <label for="code">验证码：</label>
+        <input type="text" name="sms_code" id="code">
+        <input type="button" value="获取短信验证码"><br>
+        <input type="submit" value="免费注册">&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="重置">
+    </form>
+</body>
+</html>
