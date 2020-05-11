@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	var player_autoplay = "0";
+	var player_resolution = "high";	
+	var player_timeline_preview = "1";		
+	var player_sprite = "https://img.cache010.com/media/videos/tmb/2467/sprite.jpg";
+	var player_logo = "1";
+	var player_logo_redirect = "1";
+	var player_logo_position = "top-right";
+	var player_logo_link = "";	
+	if (player_logo_link == '') {
+		player_logo_link = "http://www.900avs.com/video/2467/debut-vol-27-成宮はるあ-陽咲希美-032916-127";
+	}
+	var player_logo_image = "//v.cache10.us/media/player/logo/logo.png";	
+	var player_logo_opacity = "40";
+	var player_pause_adv = "1";
+	var video_duration = "3795";	
+	var video_id = "2467";
+	var base_url = "//v.cache10.us";	
+	var aid = "";
+</script>	
+<script src="//mat1.gtimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://cdn-img.9118fu.com/media/player/videojs/video-js.css" rel="stylesheet">	
+<link href="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-resolution-switcher-master/lib/videojs-resolution-switcher.css" rel="stylesheet">		
+<link href="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-logobrand-master/src/videojs.logobrand.css" rel="stylesheet">
+<link href="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-thumbnails-master/videojs.thumbnails.css" rel="stylesheet">
+<link href="https://cdn-img.9118fu.com/media/player/videojs/video-js-custom.css" rel="stylesheet">					
+<script src="https://cdn-img.9118fu.com/media/player/videojs/ie8/videojs-ie8.min.js"></script>
+<script src="https://cdn-img.9118fu.com/media/player/videojs/video.js"></script>
+<script src="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-resolution-switcher-master/lib/videojs-resolution-switcher.js"></script>
+<script src="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-logobrand-master/src/videojs.logobrand.js"></script>
+<script src="https://cdn-img.9118fu.com/media/player/videojs/plugins/videojs-thumbnails-master/videojs.thumbnails.js"></script>
+<script src="https://cdn-img.9118fu.com/media/player/videojs/videojs-contrib-hls.js" type="text/javascript"></script>
+<style>
+
+body {
+	margin:0!important;
+	padding:0!important;
+	overflow:hidden;
+	background-color: #000;
+}
+.text-error {  
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: red;
+	padding: 10px;	
+}
+.text-message {  
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.42857143;
+	color: #fff;
+	padding: 10px;
+}
+.text-message a {
+	color: #ccc;
+}
+.text-message a:visited {  
+	color: #ccc;
+}
+.video-embedded {
+	width: 100%;
+	overflow: hidden;
+}
+.video-embedded iframe {
+	width: 100%!important;
+	height: 100%!important;
+	}
+
+</style>
+</head>
+<body>
+		<div class="video-container">
+			<video id="video" class="video-js vjs-16-9 vjs-big-play-centered vjs-sublime-skin" preload="auto" controls poster="https://img.cache010.com/media/videos/tmb/2467/1.jpg" data-setup='{}'>
+	      			<source src="//m3u8.361lu.com/us.php?key=c1JjZXkxTnJVTGpDNVRDTGxwNm56Wk5RSVFienB4Z25IUzF5NXJLQS83cU1LcGtRRE9XUjZYNjJQOUZYN2FDcCtUc0NQVnVMZHZCNUdpVHdjL1Bnd0YwMEsyQ2FvVTlta2xPdFh6U1VrempVZElaUmZqZ09JOHZRU0tIeklRcmRqazNuU05pSHpPTk1xUGRvZnRaMHl5U0NVUjVLUERTUGRtUW5tRG9FMUxZPQ==&hash=7d17f1025916f59778be0d79d57ce2a3e43cdb00418abb8bcde93373eec57f46ca95da6f4b5f05b15d8e951c3e09abc478810ec56cb2ac8d361f55f919b3e6d5&vid=2467" type='application/x-mpegURL' label='US-HD' res='720'/>
+					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+		</video>		
+	</div>
+	<script src="https://cdn-img.9118fu.com/media/player/videojs/video-js-events.js"></script>
+</body>
+</html>
