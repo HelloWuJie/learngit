@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 后代选择器 */
+        
+        ol li a {
+            color: pink;
+        }
+        
+        .nav li a {
+            color: yellow;
+        }
+        /* 子元素选择器 */
+        
+        div>a {
+            color: yellowgreen;
+        }
+        /* 并集选择器 */
+        
+        .nav li a,
+        div>a {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>我是ol的孩子</li>
+        <li>
+            <a href="#">我是孙子</a>
+        </li>
+    </ol>
+    <ul>
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li><a href="#">我是孙子</a></li>
+    </ul>
+    <ul class="nav">
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li>我是ul的孩子</li>
+        <li><a href="#">我是孙子</a></li>
+    </ul>
+    <div>
+        <a href="#">儿子</a>
+        <p><a href="">孙子</a></p>
+    </div>
+</body>
+
+</html>

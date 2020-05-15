@@ -1,20 +1,27 @@
 body {
-    font:  16px/28px 'Microsoft YaHei';
+    font: 16px/28px 'Microsoft YaHei';
 }
+
 h2 {
     text-align: center;
     font-weight: 400;
 }
 
 p {
-    text-indent:2em;
+    text-indent: 2em;
     /* line-height: 26px; */
 }
+
 .p_center {
     text-align: center;
 }
+
 a {
     text-decoration: none;
+}
+
+a:hover {
+    color: blue;
 }
 
 .line2div {
